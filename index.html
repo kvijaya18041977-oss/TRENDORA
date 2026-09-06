@@ -1,478 +1,338 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Trendora 🔥 | Everything Trending</title>
+    <title>Trendora</title>
 
-    <meta name="description"
-          content="Trendora - Discover trending entertainment, music, movies, gaming, memes, sports and technology.">
-
-    <link rel="stylesheet" href="style.css">
+    <!-- CONNECT CSS -->
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 
-<header>
-    <div class="header-top">
+    <!-- NAVBAR -->
+    <header class="navbar">
 
-        <a class="logo" href="#">
-            🔥 TRENDO<span>RA</span>
-        </a>
-
-        <div class="search">
-            🔍
-            <input id="searchInput"
-                   type="search"
-                   placeholder="Search Trendora...">
+        <div class="logo">
+            <span>TR</span>ENDORA
         </div>
 
-    </div>
+        <nav id="navMenu">
+            <a href="#home">Home</a>
+            <a href="#trending">Trending</a>
+            <a href="#categories">Categories</a>
+            <a href="#about">About</a>
+        </nav>
 
-    <nav>
-        <a href="#">🏠 Home</a>
-        <a href="#trending">🔥 Trending</a>
-        <a href="#music">🎵 Music</a>
-        <a href="#movies">🎬 Movies</a>
-        <a href="#gaming">🎮 Gaming</a>
-        <a href="#memes">😂 Memes</a>
-        <a href="#sports">⚽ Sports</a>
-        <a href="#ai">🤖 AI</a>
-    </nav>
-</header>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    </header>
 
 
-<!-- HERO -->
+    <!-- HERO -->
+    <section class="hero" id="home">
 
-<section class="hero">
+        <div class="hero-content">
 
-    <div class="hero-content">
+            <div class="badge">
+                🔥 TRENDING NOW
+            </div>
 
-        <span class="hero-badge">🔥 TRENDING NOW</span>
+            <h1>
+                EVERYTHING
+                <br>
+                <span>TRENDING.</span>
+            </h1>
 
-        <h1>
-            Discover What's
-            <span>Trending</span>
-        </h1>
+            <p>
+                Discover music, movies, gaming, sports,
+                memes and the things everyone is talking about.
+            </p>
+
+            <a href="#trending" class="hero-button">
+                Explore Trends →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- TRENDING -->
+    <section class="section" id="trending">
+
+        <div class="heading">
+
+            <div>
+                <small>WHAT'S HOT</small>
+                <h2>Trending Today</h2>
+            </div>
+
+            <button class="refresh" onclick="refreshPage()">
+                ↻
+            </button>
+
+        </div>
+
+
+        <div class="cards">
+
+
+            <!-- MUSIC -->
+            <article class="card">
+
+                <div class="image-box">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1000&q=80"
+                        alt="Music">
+
+                    <span>01</span>
+
+                </div>
+
+                <div class="card-text">
+
+                    <small>MUSIC</small>
+
+                    <h3>
+                        Sounds taking over the internet
+                    </h3>
+
+                    <button onclick="like(this)">
+                        ♡ Like
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- MOVIES -->
+            <article class="card">
+
+                <div class="image-box">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1000&q=80"
+                        alt="Movies">
+
+                    <span>02</span>
+
+                </div>
+
+                <div class="card-text">
+
+                    <small>MOVIES</small>
+
+                    <h3>
+                        Movies everyone is watching
+                    </h3>
+
+                    <button onclick="like(this)">
+                        ♡ Like
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- GAMING -->
+            <article class="card">
+
+                <div class="image-box">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1000&q=80"
+                        alt="Gaming">
+
+                    <span>03</span>
+
+                </div>
+
+                <div class="card-text">
+
+                    <small>GAMING</small>
+
+                    <h3>
+                        Games everyone wants to play
+                    </h3>
+
+                    <button onclick="like(this)">
+                        ♡ Like
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- SPORTS -->
+            <article class="card">
+
+                <div class="image-box">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1000&q=80"
+                        alt="Sports">
+
+                    <span>04</span>
+
+                </div>
+
+                <div class="card-text">
+
+                    <small>SPORTS</small>
+
+                    <h3>
+                        Biggest sports moments
+                    </h3>
+
+                    <button onclick="like(this)">
+                        ♡ Like
+                    </button>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+    <section class="section categories" id="categories">
+
+        <div class="heading">
+
+            <div>
+                <small>EXPLORE</small>
+                <h2>Choose Your Vibe</h2>
+            </div>
+
+        </div>
+
+
+        <div class="category-grid">
+
+            <button onclick="category('Music')">
+                🎵
+                <strong>Music</strong>
+                <small>Latest sounds</small>
+            </button>
+
+            <button onclick="category('Movies')">
+                🎬
+                <strong>Movies</strong>
+                <small>Latest films</small>
+            </button>
+
+            <button onclick="category('Gaming')">
+                🎮
+                <strong>Gaming</strong>
+                <small>Game trends</small>
+            </button>
+
+            <button onclick="category('Sports')">
+                🏆
+                <strong>Sports</strong>
+                <small>Big moments</small>
+            </button>
+
+            <button onclick="category('Memes')">
+                😂
+                <strong>Memes</strong>
+                <small>Going viral</small>
+            </button>
+
+            <button onclick="category('Technology')">
+                🤖
+                <strong>Technology</strong>
+                <small>What's next</small>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURE -->
+    <section class="feature">
+
+        <div class="feature-text">
+
+            <small>THE TRENDORA EXPERIENCE</small>
+
+            <h2>
+                FIND YOUR
+                <span>NEXT TREND.</span>
+            </h2>
+
+            <p>
+                One place for the internet's most interesting
+                and entertaining trends.
+            </p>
+
+            <button onclick="discover()">
+                Discover Now →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+        <small>ABOUT US</small>
+
+        <h2>
+            Everything trending.
+            <br>
+            <span>One place.</span>
+        </h2>
 
         <p>
-            Explore entertainment, music, movies, gaming,
-            memes, sports and technology — all in one place.
+            Trendora brings together the latest entertainment,
+            viral topics and internet trends in one simple place.
         </p>
 
-        <a href="#trending" class="hero-button">
-            Explore Now →
-        </a>
-
-    </div>
-
-</section>
+    </section>
 
 
-<!-- TRENDING -->
+    <!-- FOOTER -->
+    <footer>
 
-<section id="trending">
-
-    <div class="section-title">
-        <div>
-            <small>HOT RIGHT NOW</small>
-            <h2>🔥 Trending Now</h2>
+        <div class="footer-logo">
+            <span>TR</span>ENDORA
         </div>
 
-        <a href="#">View All →</a>
-    </div>
+        <p>
+            Everything Trending, In One Place.
+        </p>
 
-    <div class="cards">
-
-        <article class="card searchable">
-
-            <div class="card-image">
-                <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=80"
-                     alt="Live event">
-                <span class="rank">#1 🔥</span>
-            </div>
-
-            <div class="card-content">
-                <span class="tag">🔥 VIRAL</span>
-                <h3>What's Going Viral?</h3>
-                <p>Discover topics people are talking about right now.</p>
-
-                <div class="card-meta">
-                    <span>👁️ Trending</span>
-                    <button class="like-btn">♡</button>
-                </div>
-            </div>
-
-        </article>
-
-
-        <article class="card searchable">
-
-            <div class="card-image">
-                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=900&q=80"
-                     alt="Music concert">
-                <span class="rank">#2 🎵</span>
-            </div>
-
-            <div class="card-content">
-                <span class="tag">🎵 MUSIC</span>
-                <h3>Music Trends</h3>
-                <p>Explore popular music and entertainment trends.</p>
-
-                <div class="card-meta">
-                    <span>🎧 Music</span>
-                    <button class="like-btn">♡</button>
-                </div>
-            </div>
-
-        </article>
-
-
-        <article class="card searchable">
-
-            <div class="card-image">
-                <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=900&q=80"
-                     alt="Cinema">
-                <span class="rank">#3 🎬</span>
-            </div>
-
-            <div class="card-content">
-                <span class="tag">🎬 MOVIES</span>
-                <h3>Movie Buzz</h3>
-                <p>Find the latest entertainment trends.</p>
-
-                <div class="card-meta">
-                    <span>🍿 Movies</span>
-                    <button class="like-btn">♡</button>
-                </div>
-            </div>
-
-        </article>
-
-
-        <article class="card searchable">
-
-            <div class="card-image">
-                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=80"
-                     alt="Gaming setup">
-                <span class="rank">#4 🎮</span>
-            </div>
-
-            <div class="card-content">
-                <span class="tag">🎮 GAMING</span>
-                <h3>Gaming World</h3>
-                <p>Explore popular games and gaming culture.</p>
-
-                <div class="card-meta">
-                    <span>🎮 Gaming</span>
-                    <button class="like-btn">♡</button>
-                </div>
-            </div>
-
-        </article>
-
-    </div>
-
-    <p id="noResults" class="no-results">
-        😕 No trends found.
-    </p>
-
-</section>
-
-
-<!-- EXPLORE -->
-
-<section>
-
-    <div class="section-title">
-        <div>
-            <small>DISCOVER</small>
-            <h2>🌎 Explore Categories</h2>
-        </div>
-    </div>
-
-    <div class="categories">
-
-        <a class="category"
-           href="#music"
-           style="background-image:url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=800&q=80')">
-            <span>🎵 Music</span>
-        </a>
-
-        <a class="category"
-           href="#movies"
-           style="background-image:url('https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=800&q=80')">
-            <span>🎬 Movies</span>
-        </a>
-
-        <a class="category"
-           href="#gaming"
-           style="background-image:url('https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=800&q=80')">
-            <span>🎮 Gaming</span>
-        </a>
-
-        <a class="category"
-           href="#memes"
-           style="background-image:url('https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?auto=format&fit=crop&w=800&q=80')">
-            <span>😂 Memes</span>
-        </a>
-
-        <a class="category"
-           href="#sports"
-           style="background-image:url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=800&q=80')">
-            <span>⚽ Sports</span>
-        </a>
-
-        <a class="category"
-           href="#ai"
-           style="background-image:url('https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80')">
-            <span>🤖 AI & Tech</span>
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- MUSIC -->
-
-<section id="music">
-
-    <div class="section-title">
-        <div>
-            <small>LISTEN</small>
-            <h2>🎵 Music</h2>
-        </div>
-        <a href="#">More →</a>
-    </div>
-
-    <div class="mini-grid">
-
-        <div class="feature-card">
-            <img src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&w=900&q=80"
-                 alt="Concert">
-            <div>
-                <h3>🎧 Music Everywhere</h3>
-                <p>Discover sounds people are enjoying.</p>
-            </div>
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#trending">Trending</a>
+            <a href="#categories">Categories</a>
+            <a href="#about">About</a>
         </div>
 
-        <div class="feature-card">
-            <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=900&q=80"
-                 alt="Music studio">
-            <div>
-                <h3>🎤 New Sounds</h3>
-                <p>Explore music and artists.</p>
-            </div>
-        </div>
+        <p class="copyright">
+            © 2026 Trendora
+        </p>
 
-    </div>
+    </footer>
 
-</section>
 
-
-<!-- MOVIES -->
-
-<section id="movies">
-
-    <div class="section-title">
-        <div>
-            <small>WATCH</small>
-            <h2>🎬 Movies</h2>
-        </div>
-        <a href="#">More →</a>
-    </div>
-
-    <div class="mini-grid">
-
-        <div class="feature-card">
-            <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=900&q=80"
-                 alt="Cinema">
-            <div>
-                <h3>🍿 Cinema Buzz</h3>
-                <p>Explore the world of movies.</p>
-            </div>
-        </div>
-
-        <div class="feature-card">
-            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=900&q=80"
-                 alt="Film">
-            <div>
-                <h3>🎥 Movie World</h3>
-                <p>Discover what's popular.</p>
-            </div>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- SPORTS -->
-
-<section id="sports">
-
-    <div class="section-title">
-        <div>
-            <small>PLAY</small>
-            <h2>⚽ Sports</h2>
-        </div>
-    </div>
-
-    <div class="sports-banner">
-
-        <div>
-            <span>🏆 SPORTS ZONE</span>
-            <h2>Feel the excitement.</h2>
-            <p>Discover popular sports moments and stories.</p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- AI -->
-
-<section id="ai">
-
-    <div class="section-title">
-        <div>
-            <small>FUTURE</small>
-            <h2>🤖 AI & Technology</h2>
-        </div>
-    </div>
-
-    <div class="ai-card">
-
-        <div class="ai-icon">🤖</div>
-
-        <div>
-            <h2>AI is changing everything.</h2>
-            <p>
-                Explore interesting technology and AI trends.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- MEMES -->
-
-<section id="memes">
-
-    <div class="section-title">
-        <div>
-            <small>FUN</small>
-            <h2>😂 Meme Zone</h2>
-        </div>
-    </div>
-
-    <div class="meme-box">
-
-        <div class="meme">😂</div>
-        <div class="meme">🤣</div>
-        <div class="meme">😎</div>
-        <div class="meme">🔥</div>
-
-    </div>
-
-</section>
-
-
-<!-- POLL -->
-
-<section>
-
-    <div class="section-title">
-        <div>
-            <small>YOUR OPINION</small>
-            <h2>🗳️ Poll of the Day</h2>
-        </div>
-    </div>
-
-    <div class="poll">
-
-        <h3>Which category do you like most?</h3>
-
-        <button class="poll-option">🎵 Music</button>
-        <button class="poll-option">🎬 Movies</button>
-        <button class="poll-option">🎮 Gaming</button>
-        <button class="poll-option">😂 Memes</button>
-
-        <p id="pollResult"></p>
-
-    </div>
-
-</section>
-
-
-<!-- GAMES -->
-
-<section id="games">
-
-    <div class="section-title">
-        <div>
-            <small>HAVE FUN</small>
-            <h2>🎮 Play Now</h2>
-        </div>
-    </div>
-
-    <div class="game-box">
-
-        <div class="game">
-            <div class="game-icon">⚡</div>
-            <h3>Reaction Test</h3>
-            <p>Test your reaction speed.</p>
-            <button onclick="startReaction()">Play</button>
-        </div>
-
-        <div class="game">
-            <div class="game-icon">🧩</div>
-            <h3>Quick Quiz</h3>
-            <p>Answer a quick question.</p>
-            <button onclick="quickQuiz()">Play</button>
-        </div>
-
-        <div class="game">
-            <div class="game-icon">🎯</div>
-            <h3>Lucky Number</h3>
-            <p>Try your luck.</p>
-            <button onclick="luckyNumber()">Play</button>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-    <div class="footer-logo">🔥 TRENDORA</div>
-
-    <p>Everything Trending, In One Place.</p>
-
-    <div class="footer-links">
-        <a href="#">Home</a>
-        <a href="#trending">Trending</a>
-        <a href="#music">Music</a>
-        <a href="#movies">Movies</a>
-        <a href="#gaming">Gaming</a>
-    </div>
-
-    <p class="copyright">
-        © 2026 Trendora • Made for trend lovers 🔥
-    </p>
-
-</footer>
-
-
-<script src="script.js"></script>
+    <!-- CONNECT JAVASCRIPT -->
+    <script src="./script.js"></script>
 
 </body>
-                    </html>
+</html>
