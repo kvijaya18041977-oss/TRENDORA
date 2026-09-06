@@ -1,88 +1,124 @@
-/* =========================
+/* =========================================
+   TRENDORA JAVASCRIPT
+========================================= */
+
+
+/* =========================================
    MOBILE MENU
-========================= */
+========================================= */
 
 function toggleMenu() {
 
     const menu = document.getElementById("navMenu");
 
-    menu.classList.toggle("active");
+    menu.classList.toggle("open");
 
 }
 
 
-/* =========================
-   LIKE BUTTON
-========================= */
+function closeMenu() {
 
-function like(button) {
+    const menu = document.getElementById("navMenu");
 
-    if (button.classList.contains("liked")) {
-
-        button.innerHTML = "♡ Like";
-        button.classList.remove("liked");
-
-    } else {
-
-        button.innerHTML = "♥ Liked";
-        button.classList.add("liked");
-
-    }
+    menu.classList.remove("open");
 
 }
 
 
-/* =========================
-   REFRESH
-========================= */
+/* =========================================
+   SCROLL TO TRENDING
+========================================= */
 
-function refreshPage() {
+function scrollToTrending() {
 
-    const button = document.querySelector(".refresh");
+    const section = document.getElementById("trending");
 
-    button.style.transform = "rotate(360deg)";
-
-    setTimeout(function () {
-
-        button.style.transform = "rotate(0deg)";
-
-    }, 500);
+    section.scrollIntoView({
+        behavior: "smooth"
+    });
 
 }
 
 
-/* =========================
-   CATEGORY
-========================= */
+/* =========================================
+   CATEGORY BUTTONS
+========================================= */
 
-function category(name) {
+function showCategory(category) {
 
     alert(
-        name + " section is coming soon! 🔥"
+        "🔥 " +
+        category +
+        " trends are coming soon!"
     );
 
 }
 
 
-/* =========================
-   DISCOVER
-========================= */
+/* =========================================
+   NEWS FILTER
+========================================= */
 
-function discover() {
+function filterNews(category, button) {
 
-    document
-        .getElementById("trending")
-        .scrollIntoView({
-            behavior: "smooth"
-        });
+    const cards =
+        document.querySelectorAll(".news-card");
+
+    const filters =
+        document.querySelectorAll(".filter");
+
+
+    /* Remove active */
+
+    filters.forEach(function(filter) {
+
+        filter.classList.remove("active");
+
+    });
+
+
+    /* Add active */
+
+    button.classList.add("active");
+
+
+    /* Filter cards */
+
+    cards.forEach(function(card) {
+
+        const cardCategory =
+            card.getAttribute("data-category");
+
+
+        if (
+            category === "All" ||
+            cardCategory === category
+        ) {
+
+            card.classList.remove("hidden");
+
+        } else {
+
+            card.classList.add("hidden");
+
+        }
+
+    });
 
 }
 
 
-/* =========================
+/* =========================================
    PAGE LOADED
-========================= */
+========================================= */
 
-console.log(
-    "Trendora loaded successfully 🚀"
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        console.log(
+            "🔥 Trendora loaded successfully!"
+        );
+
+    }
 );
