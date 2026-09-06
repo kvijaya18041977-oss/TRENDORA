@@ -727,7 +727,101 @@ footer p {
         padding: 70px;
 
         min-height: 540px;
+    }/* =========================
+   LIVE TRENDING
+========================= */
+
+.live-trending {
+    padding: 70px 20px;
+    background: #080808;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-title span {
+    color: #ff3150;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.section-title h2 {
+    font-size: 36px;
+    margin: 8px 0;
+}
+
+.section-title p {
+    color: #999;
+}
+
+.news-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.news-card {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 18px;
+    padding: 24px;
+    transition: 0.3s;
+}
+
+.news-card:hover {
+    transform: translateY(-6px);
+    border-color: #ff3150;
+}
+
+.news-category {
+    color: #ff3150;
+    font-size: 12px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.news-card h3 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin-bottom: 12px;
+}
+
+.news-card p {
+    color: #999;
+    line-height: 1.6;
+}
+
+.news-time {
+    display: block;
+    margin-top: 18px;
+    color: #666;
+    font-size: 12px;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .live-trending {
+        padding: 55px 16px;
     }
+
+    .section-title h2 {
+        font-size: 30px;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .news-card {
+        padding: 20px;
+    }
+}
 
     .feature h2 {
         font-size: 70px;
