@@ -1,566 +1,536 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
           content="Trendora - Discover what's trending in entertainment, music, gaming, sports, technology and more.">
 
-    <meta name="theme-color"
-          content="#080808">
+    <meta name="theme-color" content="#080808">
 
-    <title>Trendora | Everything Trending</title>
+    <title>Trendora — Everything Trending</title>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-    <!-- =========================
-         NAVIGATION
-    ========================== -->
+<!-- ================= NAVBAR ================= -->
 
-    <header class="navbar">
+<header class="navbar">
 
-        <div class="logo">
-            <span>TREND</span>ORA
+    <a href="#home" class="logo">
+        TREND<span>ORA</span>
+    </a>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <nav id="navMenu">
+        <a href="#home" onclick="closeMenu()">Home</a>
+        <a href="#trending" onclick="closeMenu()">Trending</a>
+        <a href="#categories" onclick="closeMenu()">Categories</a>
+        <a href="#about" onclick="closeMenu()">About</a>
+    </nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="live-label">
+            🔴 LIVE TRENDING
         </div>
 
-        <button class="menu-button"
-                onclick="toggleMenu()"
-                aria-label="Open menu">
-
-            ☰
-
-        </button>
-
-        <nav id="navMenu">
-
-            <a href="#home">Home</a>
-
-            <a href="#trending">Trending</a>
-
-            <a href="#categories">Categories</a>
-
-            <a href="#about">About</a>
-
-        </nav>
-
-    </header>
-
-
-
-    <!-- =========================
-         HERO
-    ========================== -->
-
-    <main>
-
-        <section class="hero" id="home">
-
-            <div class="hero-content">
-
-                <p class="hero-small">
-                    🔥 THE INTERNET'S HOTTEST
-                </p>
-
-                <h1>
-                    EVERYTHING<br>
-                    <span>TRENDING.</span>
-                </h1>
-
-                <p class="hero-text">
-                    Discover what's hot, what's new,
-                    and what everyone is talking about.
-                </p>
-
-                <button class="hero-button"
-                        onclick="discover()">
-
-                    Explore Trends →
-
-                </button>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             TRENDING
-        ========================== -->
-
-        <section class="trending-section"
-                 id="trending">
-
-            <div class="section-heading">
-
-                <span>🔥 WHAT'S HOT</span>
-
-                <h2>
-                    Trending
-                </h2>
-
-                <p>
-                    The biggest topics people are talking about.
-                </p>
-
-            </div>
-
-
-            <div class="trend-grid">
-
-
-                <!-- MUSIC -->
-
-                <article class="trend-card">
-
-                    <div class="trend-icon">
-                        🎵
-                    </div>
-
-                    <div class="trend-info">
-
-                        <span>
-                            MUSIC
-                        </span>
-
-                        <h3>
-                            What's playing everywhere?
-                        </h3>
-
-                        <p>
-                            Discover popular songs,
-                            artists and music trends.
-                        </p>
-
-                    </div>
-
-                    <button onclick="category('Music')">
-                        Explore →
-                    </button>
-
-                </article>
-
-
-
-                <!-- MOVIES -->
-
-                <article class="trend-card">
-
-                    <div class="trend-icon">
-                        🎬
-                    </div>
-
-                    <div class="trend-info">
-
-                        <span>
-                            MOVIES
-                        </span>
-
-                        <h3>
-                            What's everyone watching?
-                        </h3>
-
-                        <p>
-                            Find popular movies,
-                            shows and entertainment.
-                        </p>
-
-                    </div>
-
-                    <button onclick="category('Movies')">
-                        Explore →
-                    </button>
-
-                </article>
-
-
-
-                <!-- GAMING -->
-
-                <article class="trend-card">
-
-                    <div class="trend-icon">
-                        🎮
-                    </div>
-
-                    <div class="trend-info">
-
-                        <span>
-                            GAMING
-                        </span>
-
-                        <h3>
-                            Level up with gaming trends.
-                        </h3>
-
-                        <p>
-                            Discover games, updates,
-                            releases and gaming news.
-                        </p>
-
-                    </div>
-
-                    <button onclick="category('Gaming')">
-                        Explore →
-                    </button>
-
-                </article>
-
-
-
-                <!-- SPORTS -->
-
-                <article class="trend-card">
-
-                    <div class="trend-icon">
-                        ⚽
-                    </div>
-
-                    <div class="trend-info">
-
-                        <span>
-                            SPORTS
-                        </span>
-
-                        <h3>
-                            The world of sports.
-                        </h3>
-
-                        <p>
-                            Follow popular sports stories,
-                            events and moments.
-                        </p>
-
-                    </div>
-
-                    <button onclick="category('Sports')">
-                        Explore →
-                    </button>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             LIVE TRENDING
-        ========================== -->
-
-        <section class="live-trending"
-                 id="liveTrending">
-
-
-            <div class="section-title">
-
-                <span>
-                    🔥 LIVE
-                </span>
-
-                <h2>
-                    Trending Now
-                </h2>
-
-                <p>
-                    Fresh stories and topics people
-                    are talking about.
-                </p>
-
-            </div>
-
-
-
-            <div class="news-grid"
-                 id="newsGrid">
-
-
-                <!-- NEWS CARD 1 -->
-
-                <article class="news-card">
-
-                    <div class="news-category">
-                        🤖 TECHNOLOGY
-                    </div>
-
-                    <h3>
-                        AI is changing the way people
-                        use smartphones
-                    </h3>
-
-                    <p>
-                        Discover the latest technology
-                        trends and innovations.
-                    </p>
-
-                    <span class="news-time">
-                        Trending today
-                    </span>
-
-                </article>
-
-
-
-                <!-- NEWS CARD 2 -->
-
-                <article class="news-card">
-
-                    <div class="news-category">
-                        🎬 ENTERTAINMENT
-                    </div>
-
-                    <h3>
-                        New movies and shows are
-                        taking over streaming
-                    </h3>
-
-                    <p>
-                        Check out what's getting
-                        attention in entertainment.
-                    </p>
-
-                    <span class="news-time">
-                        Trending today
-                    </span>
-
-                </article>
-
-
-
-                <!-- NEWS CARD 3 -->
-
-                <article class="news-card">
-
-                    <div class="news-category">
-                        🇮🇳 INDIA
-                    </div>
-
-                    <h3>
-                        What's trending across
-                        India today?
-                    </h3>
-
-                    <p>
-                        Catch the latest stories
-                        and conversations.
-                    </p>
-
-                    <span class="news-time">
-                        Updated today
-                    </span>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             CATEGORIES
-        ========================== -->
-
-        <section class="categories-section"
-                 id="categories">
-
-            <div class="section-heading">
-
-                <span>
-                    EXPLORE
-                </span>
-
-                <h2>
-                    Find Your Trend.
-                </h2>
-
-                <p>
-                    Choose a category and discover
-                    what's happening.
-                </p>
-
-            </div>
-
-
-            <div class="category-grid">
-
-
-                <button onclick="category('Music')">
-                    🎵
-                    <strong>Music</strong>
-                    <span>Songs & Artists</span>
-                </button>
-
-
-                <button onclick="category('Movies')">
-                    🎬
-                    <strong>Movies</strong>
-                    <span>Films & Shows</span>
-                </button>
-
-
-                <button onclick="category('Gaming')">
-                    🎮
-                    <strong>Gaming</strong>
-                    <span>Games & Updates</span>
-                </button>
-
-
-                <button onclick="category('Sports')">
-                    ⚽
-                    <strong>Sports</strong>
-                    <span>Latest Action</span>
-                </button>
-
-
-                <button onclick="category('Memes')">
-                    😂
-                    <strong>Memes</strong>
-                    <span>Internet Culture</span>
-                </button>
-
-
-                <button onclick="category('Technology')">
-                    🤖
-                    <strong>Technology</strong>
-                    <span>Tech & AI</span>
-                </button>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             FEATURE
-        ========================== -->
-
-        <section class="feature-section">
-
-            <div class="feature-card">
-
-                <div class="feature-content">
-
-                    <span>
-                        🔥 TRENDORA
-                    </span>
-
-                    <h2>
-                        Find Your
-                        Next Trend.
-                    </h2>
-
-                    <p>
-                        From viral moments to the latest
-                        technology, Trendora brings the
-                        internet's hottest topics together.
-                    </p>
-
-                    <button onclick="discover()">
-                        Discover Now →
-                    </button>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             ABOUT
-        ========================== -->
-
-        <section class="about-section"
-                 id="about">
-
-            <div class="about-content">
-
-                <span>
-                    ABOUT TRENDORA
-                </span>
-
-                <h2>
-                    Stay ahead of
-                    what's trending.
-                </h2>
-
-                <p>
-                    Trendora is a modern entertainment
-                    platform designed to bring trending
-                    topics, viral content, technology,
-                    gaming, sports and entertainment
-                    together in one place.
-                </p>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
-    <footer>
-
-        <div class="footer-logo">
-            <span>TREND</span>ORA
-        </div>
+        <h1>
+            EVERYTHING<br>
+            <span>TRENDING.</span>
+        </h1>
 
         <p>
-            Everything trending. One place.
+            Discover the hottest stories, entertainment,
+            technology, gaming, sports and viral topics
+            all in one place.
         </p>
 
-        <div class="footer-links">
+        <button class="primary-btn" onclick="scrollToTrending()">
+            Explore Trends →
+        </button>
 
-            <a href="#home">
-                Home
-            </a>
+    </div>
 
-            <a href="#trending">
-                Trending
-            </a>
+</section>
 
-            <a href="#categories">
-                Categories
-            </a>
 
-            <a href="#about">
-                About
-            </a>
+<!-- ================= TRENDING ================= -->
+
+<section class="section" id="trending">
+
+    <div class="section-header">
+
+        <div class="eyebrow">
+            🔥 WHAT'S HOT
+        </div>
+
+        <h2>Trending</h2>
+
+        <p>
+            Explore the biggest categories people are
+            talking about.
+        </p>
+
+    </div>
+
+
+    <div class="trend-grid">
+
+
+        <div class="trend-card">
+
+            <div class="trend-icon">🎵</div>
+
+            <div class="trend-category">
+                MUSIC
+            </div>
+
+            <h3>Music Trends</h3>
+
+            <p>
+                Discover popular songs, artists and
+                music moments.
+            </p>
+
+            <button onclick="showCategory('Music')">
+                Explore →
+            </button>
 
         </div>
 
-        <p class="copyright">
-            © 2026 Trendora. All rights reserved.
+
+        <div class="trend-card">
+
+            <div class="trend-icon">🎬</div>
+
+            <div class="trend-category">
+                ENTERTAINMENT
+            </div>
+
+            <h3>Movies & Shows</h3>
+
+            <p>
+                Find movies, series and entertainment
+                everyone is talking about.
+            </p>
+
+            <button onclick="showCategory('Movies')">
+                Explore →
+            </button>
+
+        </div>
+
+
+        <div class="trend-card">
+
+            <div class="trend-icon">🎮</div>
+
+            <div class="trend-category">
+                GAMING
+            </div>
+
+            <h3>Gaming Trends</h3>
+
+            <p>
+                Discover games, updates, releases
+                and gaming news.
+            </p>
+
+            <button onclick="showCategory('Gaming')">
+                Explore →
+            </button>
+
+        </div>
+
+
+        <div class="trend-card">
+
+            <div class="trend-icon">⚽</div>
+
+            <div class="trend-category">
+                SPORTS
+            </div>
+
+            <h3>Sports</h3>
+
+            <p>
+                Follow popular sporting events,
+                stories and moments.
+            </p>
+
+            <button onclick="showCategory('Sports')">
+                Explore →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LIVE NEWS ================= -->
+
+<section class="live-section" id="live">
+
+    <div class="section-header">
+
+        <div class="eyebrow">
+            🔴 LIVE
+        </div>
+
+        <h2>Trending Now</h2>
+
+        <p>
+            Fresh stories and topics from around the web.
         </p>
 
-    </footer>
+    </div>
 
 
+    <!-- FILTER BUTTONS -->
 
-    <!-- =========================
-         JAVASCRIPT
-    ========================== -->
+    <div class="filter-bar">
 
-    <script src="./script.js"></script>
+        <button class="filter active"
+                onclick="filterNews('All', this)">
+            All
+        </button>
+
+        <button class="filter"
+                onclick="filterNews('Technology', this)">
+            🤖 Technology
+        </button>
+
+        <button class="filter"
+                onclick="filterNews('Entertainment', this)">
+            🎬 Entertainment
+        </button>
+
+        <button class="filter"
+                onclick="filterNews('Sports', this)">
+            ⚽ Sports
+        </button>
+
+        <button class="filter"
+                onclick="filterNews('India', this)">
+            🇮🇳 India
+        </button>
+
+    </div>
+
+
+    <!-- NEWS -->
+
+    <div class="news-grid" id="newsGrid">
+
+
+        <article class="news-card"
+                 data-category="Technology">
+
+            <div class="news-top">
+
+                <span class="news-category">
+                    🤖 TECHNOLOGY
+                </span>
+
+                <span class="news-number">
+                    #01
+                </span>
+
+            </div>
+
+            <h3>
+                AI is becoming one of the biggest
+                technology trends
+            </h3>
+
+            <p>
+                Discover the latest developments in
+                artificial intelligence and technology.
+            </p>
+
+            <div class="news-bottom">
+                <span>Technology</span>
+                <span>Today</span>
+            </div>
+
+        </article>
+
+
+        <article class="news-card"
+                 data-category="Entertainment">
+
+            <div class="news-top">
+
+                <span class="news-category">
+                    🎬 ENTERTAINMENT
+                </span>
+
+                <span class="news-number">
+                    #02
+                </span>
+
+            </div>
+
+            <h3>
+                New movies and streaming shows
+                are getting attention
+            </h3>
+
+            <p>
+                See what's gaining attention across
+                entertainment and streaming.
+            </p>
+
+            <div class="news-bottom">
+                <span>Entertainment</span>
+                <span>Today</span>
+            </div>
+
+        </article>
+
+
+        <article class="news-card"
+                 data-category="Sports">
+
+            <div class="news-top">
+
+                <span class="news-category">
+                    ⚽ SPORTS
+                </span>
+
+                <span class="news-number">
+                    #03
+                </span>
+
+            </div>
+
+            <h3>
+                The latest sports stories and
+                moments people are following
+            </h3>
+
+            <p>
+                Catch up on popular sporting stories
+                and events.
+            </p>
+
+            <div class="news-bottom">
+                <span>Sports</span>
+                <span>Today</span>
+            </div>
+
+        </article>
+
+
+        <article class="news-card"
+                 data-category="India">
+
+            <div class="news-top">
+
+                <span class="news-category">
+                    🇮🇳 INDIA
+                </span>
+
+                <span class="news-number">
+                    #04
+                </span>
+
+            </div>
+
+            <h3>
+                What's trending across India today?
+            </h3>
+
+            <p>
+                Explore interesting stories and
+                conversations from India.
+            </p>
+
+            <div class="news-bottom">
+                <span>India</span>
+                <span>Today</span>
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= CATEGORIES ================= -->
+
+<section class="section categories" id="categories">
+
+    <div class="section-header">
+
+        <div class="eyebrow">
+            EXPLORE
+        </div>
+
+        <h2>Find Your Trend.</h2>
+
+        <p>
+            Choose your favourite category.
+        </p>
+
+    </div>
+
+
+    <div class="category-grid">
+
+
+        <button onclick="showCategory('Music')">
+            <span class="category-icon">🎵</span>
+            <strong>Music</strong>
+            <small>Songs & Artists</small>
+        </button>
+
+
+        <button onclick="showCategory('Movies')">
+            <span class="category-icon">🎬</span>
+            <strong>Movies</strong>
+            <small>Films & Shows</small>
+        </button>
+
+
+        <button onclick="showCategory('Gaming')">
+            <span class="category-icon">🎮</span>
+            <strong>Gaming</strong>
+            <small>Games & Updates</small>
+        </button>
+
+
+        <button onclick="showCategory('Sports')">
+            <span class="category-icon">⚽</span>
+            <strong>Sports</strong>
+            <small>Latest Action</small>
+        </button>
+
+
+        <button onclick="showCategory('Memes')">
+            <span class="category-icon">😂</span>
+            <strong>Memes</strong>
+            <small>Internet Culture</small>
+        </button>
+
+
+        <button onclick="showCategory('Technology')">
+            <span class="category-icon">🤖</span>
+            <strong>Technology</strong>
+            <small>Tech & AI</small>
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURE ================= -->
+
+<section class="feature">
+
+    <div class="feature-box">
+
+        <div class="feature-content">
+
+            <div class="eyebrow">
+                🔥 TRENDORA
+            </div>
+
+            <h2>
+                Never miss<br>
+                what's trending.
+            </h2>
+
+            <p>
+                Trendora brings trending topics,
+                entertainment, technology, gaming,
+                sports and viral content together.
+            </p>
+
+            <button class="primary-btn"
+                    onclick="scrollToTrending()">
+                Discover Now →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+    <div class="about-content">
+
+        <div class="eyebrow">
+            ABOUT TRENDORA
+        </div>
+
+        <h2>
+            Stay ahead of<br>
+            what's trending.
+        </h2>
+
+        <p>
+            Trendora is a modern platform designed
+            to make discovering trending content
+            simple, fast and fun.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        TREND<span>ORA</span>
+    </div>
+
+    <p>
+        Everything trending. One place.
+    </p>
+
+    <div class="footer-links">
+
+        <a href="#home">Home</a>
+        <a href="#trending">Trending</a>
+        <a href="#categories">Categories</a>
+        <a href="#about">About</a>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 Trendora
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
 
 </body>
-
-                    </html>
+    </html>
