@@ -3,13 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Trendora 🔥</title>
+
+    <meta name="description"
+          content="Trendora - Everything Trending, In One Place.">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b0b12;
+            color: white;
+        }
+
+        header {
+            padding: 18px;
+            text-align: center;
+            background: #151522;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        header h1 {
+            font-size: 32px;
+        }
+
+        header p {
+            color: #aaa;
+            margin-top: 5px;
+        }
+
+        nav {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding: 12px;
+            background: #101019;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            background: #202030;
+            padding: 9px 14px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .hero {
+            margin: 15px;
+            height: 300px;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            background:
+                linear-gradient(transparent, #000),
+                url("https://images.unsplash.com/photo-1519608487953-e999c86e7455")
+                center/cover;
+        }
+
+        .hero-content {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+        }
+
+        .hero-content h2 {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .hero-content p {
+            color: #ddd;
+        }
+
+        section {
+            padding: 15px;
+        }
+
+        section h2 {
+            margin-bottom: 14px;
+        }
+
+        .cards {
+            display: flex;
+            gap: 14px;
+            overflow-x: auto;
+        }
+
+        .card {
+            min-width: 230px;
+            background: #171722;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .card img {
+            width: 100%;
+            height: 145px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 12px;
+        }
+
+        .card-content h3 {
+            margin-bottom: 6px;
+        }
+
+        .card-content p {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .tag {
+            display: inline-block;
+            margin-top: 9px;
+            padding: 5px 9px;
+            background: #29293a;
+            border-radius: 10px;
+            font-size: 12px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #777;
+        }
+    </style>
 </head>
 
 <body>
 
+<header>
     <h1>🔥 TRENDORA</h1>
     <p>Everything Trending, In One Place.</p>
+</header>
+
+<nav>
+    <a href="#">🏠 Home</a>
+    <a href="#">🔥 Trending</a>
+    <a href="#">🎵 Music</a>
+    <a href="#">🎬 Movies</a>
+    <a href="#">🎮 Games</a>
+    <a href="#">😂 Memes</a>
+    <a href="#">⚽ Sports</a>
+    <a href="#">🤖 AI</a>
+</nav>
+
+<div class="hero">
+    <div class="hero-content">
+        <h2>🔥 What's Trending?</h2>
+        <p>Discover the latest things everyone's talking about.</p>
+    </div>
+</div>
+
+<section>
+    <h2>🔥 Trending Now</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30">
+            <div class="card-content">
+                <h3>🎉 Viral Events</h3>
+                <p>Discover what's happening right now.</p>
+                <span class="tag">🔥 Trending</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819">
+            <div class="card-content">
+                <h3>🎵 Music</h3>
+                <p>Explore popular music and artists.</p>
+                <span class="tag">🎵 Music</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba">
+            <div class="card-content">
+                <h3>🎬 Movies</h3>
+                <p>See what's popular in entertainment.</p>
+                <span class="tag">🎬 Movies</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e">
+            <div class="card-content">
+                <h3>🎮 Gaming</h3>
+                <p>Explore the gaming world.</p>
+                <span class="tag">🎮 Gaming</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <h2>😂 Viral Zone</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce">
+            <div class="card-content">
+                <h3>😂 Funny Moments</h3>
+                <p>Something fun is waiting for you.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1">
+            <div class="card-content">
+                <h3>🤖 Technology</h3>
+                <p>Discover interesting tech trends.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    © 2026 Trendora • Everything Trending, In One Place.
+</footer>
 
 </body>
-</html>
+    </html>
