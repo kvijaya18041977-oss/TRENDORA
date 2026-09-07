@@ -759,4 +759,1160 @@ nav a:hover::after {
     border-radius: 8px;
 
     background:
-        rgba(255,255,255
+        rgba(255,255,255,.025);
+
+    color: #9ca4ba;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    transition: .3s;
+}
+
+.filter:hover {
+    color: var(--cyan);
+
+    border-color: var(--cyan);
+
+    box-shadow:
+        0 0 15px rgba(0,245,255,.1);
+}
+
+.filter.active {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,245,255,.15),
+            rgba(155,92,255,.15)
+        );
+
+    border-color:
+        var(--cyan);
+
+    color:
+        var(--cyan);
+
+    box-shadow:
+        0 0 18px rgba(0,245,255,.12);
+}
+
+
+/* =========================================================
+   TREND GRID
+========================================================= */
+
+.trend-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0,1fr));
+
+    gap: 25px;
+}
+
+
+/* =========================================================
+   TREND CARD
+========================================================= */
+
+.trend-card {
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(13,16,30,.95),
+            rgba(7,9,18,.95)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    border-radius:
+        var(--radius);
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,.25);
+
+    transition:
+        .4s ease;
+}
+
+.trend-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius:
+        var(--radius);
+
+    background:
+        linear-gradient(
+            120deg,
+            transparent,
+            rgba(0,245,255,.08),
+            transparent
+        );
+
+    transform:
+        translateX(-100%);
+
+    transition:
+        .6s;
+
+    pointer-events:
+        none;
+}
+
+.trend-card:hover::before {
+    transform:
+        translateX(100%);
+}
+
+.trend-card:hover {
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(0,245,255,.35);
+
+    box-shadow:
+        0 0 35px rgba(0,245,255,.12),
+        0 25px 60px rgba(0,0,0,.4);
+}
+
+
+/* =========================================================
+   TREND IMAGE
+========================================================= */
+
+.trend-image {
+    position: relative;
+
+    width: 100%;
+
+    height: 270px;
+
+    overflow: hidden;
+}
+
+.trend-image img {
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    filter:
+        brightness(.65)
+        saturate(1.2);
+
+    transition:
+        .6s;
+}
+
+.trend-card:hover
+.trend-image img {
+    transform:
+        scale(1.08);
+
+    filter:
+        brightness(.8)
+        saturate(1.4);
+}
+
+
+/* IMAGE GLOW */
+
+.trend-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent 40%,
+            rgba(3,4,10,.9)
+        );
+
+    pointer-events:
+        none;
+}
+
+
+/* =========================================================
+   CATEGORY TAG
+========================================================= */
+
+.category-tag {
+    position: absolute;
+
+    z-index: 2;
+
+    top: 15px;
+
+    left: 15px;
+
+    padding: 7px 11px;
+
+    border-radius: 7px;
+
+    background:
+        rgba(3,4,10,.75);
+
+    border:
+        1px solid rgba(0,245,255,.35);
+
+    color:
+        var(--cyan);
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: .7px;
+
+    backdrop-filter:
+        blur(10px);
+
+    box-shadow:
+        0 0 15px rgba(0,245,255,.08);
+}
+
+
+/* =========================================================
+   TREND CONTENT
+========================================================= */
+
+.trend-content {
+    position: relative;
+
+    padding: 26px;
+}
+
+.trend-number {
+    color:
+        var(--pink);
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    text-shadow:
+        0 0 10px rgba(255,43,214,.4);
+}
+
+.trend-content h3 {
+    margin:
+        9px 0 12px;
+
+    color:
+        #ffffff;
+
+    font-size:
+        22px;
+
+    line-height:
+        1.3;
+}
+
+.trend-content p {
+    color:
+        var(--muted);
+
+    font-size:
+        13px;
+
+    line-height:
+        1.75;
+}
+
+
+/* =========================================================
+   TREND META
+========================================================= */
+
+.trend-meta {
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    gap: 10px;
+
+    margin:
+        20px 0;
+
+    color:
+        #697188;
+
+    font-size:
+        11px;
+}
+
+
+/* =========================================================
+   READ MORE
+========================================================= */
+
+.read-more {
+    border:
+        1px solid rgba(0,245,255,.3);
+
+    padding:
+        11px 17px;
+
+    border-radius:
+        8px;
+
+    background:
+        rgba(0,245,255,.06);
+
+    color:
+        var(--cyan);
+
+    font-size:
+        12px;
+
+    font-weight:
+        800;
+
+    transition:
+        .3s;
+}
+
+.read-more:hover {
+    background:
+        var(--cyan);
+
+    color:
+        #02040a;
+
+    box-shadow:
+        0 0 22px rgba(0,245,255,.45);
+
+    transform:
+        translateX(5px);
+}
+
+
+/* =========================================================
+   FIND YOUR TREND
+========================================================= */
+
+.find-trend {
+    position: relative;
+
+    padding:
+        100px 25px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(0,245,255,.08),
+            transparent 45%
+        ),
+
+        #050711;
+
+    border-top:
+        1px solid rgba(0,245,255,.1);
+
+    border-bottom:
+        1px solid rgba(0,245,255,.1);
+
+    text-align:
+        center;
+}
+
+.find-trend-container {
+    max-width:
+        750px;
+
+    margin:
+        auto;
+}
+
+.find-trend h2 {
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    margin-bottom:
+        12px;
+
+    font-size:
+        40px;
+
+    color:
+        #ffffff;
+
+    text-shadow:
+        0 0 25px rgba(0,245,255,.12);
+}
+
+.find-trend p {
+    margin-bottom:
+        30px;
+
+    color:
+        var(--muted);
+}
+
+
+/* SEARCH */
+
+.search-box {
+    max-width:
+        650px;
+
+    margin:
+        auto;
+
+    padding:
+        6px;
+
+    display:
+        flex;
+
+    background:
+        rgba(255,255,255,.04);
+
+    border:
+        1px solid rgba(0,245,255,.2);
+
+    border-radius:
+        12px;
+
+    box-shadow:
+        0 0 30px rgba(0,245,255,.06);
+
+    backdrop-filter:
+        blur(10px);
+}
+
+.search-box:focus-within {
+    border-color:
+        var(--cyan);
+
+    box-shadow:
+        0 0 25px rgba(0,245,255,.16);
+}
+
+.search-box input {
+    flex:
+        1;
+
+    min-width:
+        0;
+
+    padding:
+        13px 18px;
+
+    border:
+        none;
+
+    outline:
+        none;
+
+    background:
+        transparent;
+
+    color:
+        #ffffff;
+
+    font-size:
+        14px;
+}
+
+.search-box input::placeholder {
+    color:
+        #626b82;
+}
+
+.search-box button {
+    padding:
+        13px 23px;
+
+    border:
+        none;
+
+    border-radius:
+        8px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--cyan),
+            var(--purple)
+        );
+
+    color:
+        #03040a;
+
+    font-size:
+        12px;
+
+    font-weight:
+        900;
+
+    transition:
+        .3s;
+}
+
+.search-box button:hover {
+    box-shadow:
+        0 0 20px rgba(0,245,255,.35);
+}
+
+
+/* SEARCH RESULT */
+
+#searchResult {
+    min-height:
+        22px;
+
+    margin-top:
+        18px;
+
+    color:
+        var(--cyan);
+
+    font-size:
+        12px;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about {
+    padding:
+        100px 25px;
+
+    background:
+        #03040a;
+
+    text-align:
+        center;
+}
+
+.about-container {
+    max-width:
+        850px;
+
+    margin:
+        auto;
+}
+
+.about h2 {
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    margin-bottom:
+        20px;
+
+    font-size:
+        38px;
+}
+
+.about p {
+    color:
+        var(--muted);
+
+    font-size:
+        14px;
+
+    line-height:
+        1.9;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    padding:
+        55px 25px;
+
+    background:
+        #020308;
+
+    border-top:
+        1px solid rgba(0,245,255,.1);
+}
+
+.footer-container {
+    max-width:
+        1100px;
+
+    margin:
+        auto;
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    gap:
+        30px;
+
+    flex-wrap:
+        wrap;
+}
+
+.footer-logo {
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size:
+        22px;
+
+    font-weight:
+        900;
+}
+
+.footer-logo span {
+    color:
+        var(--cyan);
+
+    text-shadow:
+        0 0 10px var(--cyan);
+}
+
+.footer-text {
+    margin-top:
+        10px;
+
+    color:
+        #596177;
+
+    font-size:
+        12px;
+}
+
+.footer-links {
+    display:
+        flex;
+
+    gap:
+        20px;
+
+    flex-wrap:
+        wrap;
+}
+
+.footer-links a {
+    color:
+        #697188;
+
+    font-size:
+        12px;
+
+    transition:
+        .3s;
+}
+
+.footer-links a:hover {
+    color:
+        var(--cyan);
+
+    text-shadow:
+        0 0 8px rgba(0,245,255,.5);
+}
+
+.copyright {
+    max-width:
+        1100px;
+
+    margin:
+        35px auto 0;
+
+    padding-top:
+        25px;
+
+    border-top:
+        1px solid #151927;
+
+    color:
+        #4e566b;
+
+    font-size:
+        11px;
+}
+
+
+/* =========================================================
+   STORY POPUP
+========================================================= */
+
+.story-modal {
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        9999;
+
+    display:
+        none;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        20px;
+
+    background:
+        rgba(0,0,0,.82);
+
+    backdrop-filter:
+        blur(12px);
+}
+
+.story-box {
+    position:
+        relative;
+
+    width:
+        100%;
+
+    max-width:
+        650px;
+
+    padding:
+        40px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0e1222,
+            #070914
+        );
+
+    border:
+        1px solid rgba(0,245,255,.3);
+
+    border-radius:
+        22px;
+
+    color:
+        #ffffff;
+
+    box-shadow:
+        0 0 60px rgba(0,245,255,.12);
+
+    animation:
+        cyberPopup .3s ease;
+}
+
+@keyframes cyberPopup {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(.9)
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+}
+
+.story-box span {
+    color:
+        var(--cyan);
+
+    font-size:
+        11px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        1px;
+}
+
+.story-box h2 {
+    margin:
+        12px 0 18px;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size:
+        28px;
+
+    line-height:
+        1.3;
+}
+
+.story-box p {
+    color:
+        var(--muted);
+
+    line-height:
+        1.8;
+
+    font-size:
+        14px;
+}
+
+.close-story {
+    position:
+        absolute;
+
+    top:
+        12px;
+
+    right:
+        18px;
+
+    width:
+        40px;
+
+    height:
+        40px;
+
+    border:
+        none;
+
+    background:
+        transparent;
+
+    color:
+        #8891a9;
+
+    font-size:
+        30px;
+
+    transition:
+        .3s;
+}
+
+.close-story:hover {
+    color:
+        var(--pink);
+
+    text-shadow:
+        0 0 10px var(--pink);
+}
+
+.back-btn {
+    margin-top:
+        25px;
+
+    padding:
+        12px 20px;
+
+    border:
+        1px solid rgba(0,245,255,.3);
+
+    border-radius:
+        8px;
+
+    background:
+        rgba(0,245,255,.06);
+
+    color:
+        var(--cyan);
+
+    font-size:
+        12px;
+
+    font-weight:
+        800;
+
+    transition:
+        .3s;
+}
+
+.back-btn:hover {
+    background:
+        var(--cyan);
+
+    color:
+        #02040a;
+
+    box-shadow:
+        0 0 20px rgba(0,245,255,.4);
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+    width:
+        8px;
+}
+
+::-webkit-scrollbar-track {
+    background:
+        #03040a;
+}
+
+::-webkit-scrollbar-thumb {
+    background:
+        linear-gradient(
+            var(--cyan),
+            var(--purple)
+        );
+
+    border-radius:
+        10px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .hero-container {
+        grid-template-columns:
+            1fr;
+
+        gap:
+            45px;
+    }
+
+    .hero-card {
+        max-width:
+            700px;
+
+        width:
+            100%;
+
+        margin:
+            auto;
+    }
+
+    .trend-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    nav {
+        display:
+            none;
+    }
+
+    .menu-button {
+        display:
+            block;
+    }
+
+    .hero {
+        padding:
+            65px 18px;
+    }
+
+    .hero h1 {
+        letter-spacing:
+            -2px;
+    }
+
+    .trending-now {
+        padding:
+            70px 18px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .nav-container {
+        padding:
+            0 18px;
+    }
+
+    .logo {
+        font-size:
+            21px;
+    }
+
+    .hero {
+        padding:
+            55px 18px;
+    }
+
+    .hero h1 {
+        font-size:
+            52px;
+    }
+
+    .hero-buttons {
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        width:
+            100%;
+
+        text-align:
+            center;
+    }
+
+    .hero-card img {
+        height:
+            240px;
+    }
+
+    .trend-image {
+        height:
+            220px;
+    }
+
+    .trend-content {
+        padding:
+            21px;
+    }
+
+    .trend-content h3 {
+        font-size:
+            20px;
+    }
+
+    .trend-meta {
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+    }
+
+    .find-trend {
+        padding:
+            70px 18px;
+    }
+
+    .find-trend h2 {
+        font-size:
+            32px;
+    }
+
+    .search-box {
+        flex-direction:
+            column;
+
+        gap:
+            8px;
+
+        padding:
+            0;
+
+        background:
+            transparent;
+
+        border:
+            none;
+
+        box-shadow:
+            none;
+    }
+
+    .search-box input {
+        width:
+            100%;
+
+        padding:
+            15px;
+
+        background:
+            #0d1020;
+
+        border:
+            1px solid rgba(0,245,255,.2);
+
+        border-radius:
+            10px;
+    }
+
+    .search-box button {
+        width:
+            100%;
+    }
+
+    .story-box {
+        padding:
+            30px 22px;
+    }
+
+    .story-box h2 {
+        font-size:
+            24px;
+    }
+
+}
+
+
+/* =========================================================
+   EXTRA SMALL
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .hero h1 {
+        font-size:
+            45px;
+    }
+
+    .trend-image {
+        height:
+            190px;
+    }
+
+       }
