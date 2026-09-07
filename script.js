@@ -2,61 +2,155 @@
    TRENDORA JAVASCRIPT
 ========================================= */
 
-
-/* =========================================
-   MOBILE MENU
-========================================= */
-
 function toggleMenu() {
-
     const menu = document.getElementById("navMenu");
-
     menu.classList.toggle("open");
-
 }
-
 
 function closeMenu() {
-
     const menu = document.getElementById("navMenu");
-
     menu.classList.remove("open");
-
 }
 
-
-/* =========================================
-   SCROLL TO TRENDING
-========================================= */
-
 function scrollToTrending() {
-
     const section = document.getElementById("trending");
-
     section.scrollIntoView({
         behavior: "smooth"
     });
-
 }
 
 
 /* =========================================
-   CATEGORY BUTTONS
+   CATEGORY BUTTON
 ========================================= */
 
 function showCategory(category) {
-
-    alert(
-        "🔥 " +
-        category +
-        " trends are coming soon!"
-    );
-
+    alert("🔥 " + category + " trends are coming soon!");
 }
 
 
 /* =========================================
-   NEWS FILTER
+   LOAD NEWS FROM news.json
+========================================= */
+
+async function loadNews() {
+
+    const newsGrid = document.getElementById("newsGrid");
+
+    try {
+
+        const response = await fetch("news.json");
+
+        if (!response.ok) {
+            throw new Error("Could not load news.json");
+        }
+
+        const data = await response.json();
+
+        newsGrid.innerHTML = "";
+
+        data.news.forEach(function(news, index) {
+
+            const card = document.createElement("article");
+
+            card.className = "news-card";
+
+            card.setAttribute(
+                "data-category",
+                news.category
+            );
+
+            card.innerHTML = `
+
+                <div class="news-top">
+
+                    <span class="news-category">
+                        ${getIcon(news.category)}
+                        ${news.category.toUpperCase()}
+                    </span>
+
+                    <span class="news-number">
+                        #${String(index + 1).padStart(2, "0")}
+                    </span>
+
+                </div>
+
+                <h3>
+                    ${news.title}
+                </h3>
+
+                <p>
+                    ${news.description}
+                </p>
+
+                <div class="news-bottom">
+
+                    <span>
+                        ${news.source}
+                    </span>
+
+                    <span>
+                        Today
+                    </span>
+
+                </div>
+
+            `;
+
+            newsGrid.appendChild(card);
+
+        });
+
+    } catch (error) {
+
+        console.error(error);
+
+        newsGrid.innerHTML = `
+            <div class="news-card">
+                <h3>Unable to load trends</h3>
+                <p>
+                    Please check your internet connection
+                    or try again later.
+                </p>
+            </div>
+        `;
+
+    }
+}
+
+
+/* =========================================
+   CATEGORY ICONS
+========================================= */
+
+function getIcon(category) {
+
+    const icons = {
+
+        "Technology": "🤖",
+
+        "Entertainment": "🎬",
+
+        "Sports": "⚽",
+
+        "India": "🇮🇳",
+
+        "Music": "🎵",
+
+        "Gaming": "🎮",
+
+        "Movies": "🎬",
+
+        "Memes": "😂"
+
+    };
+
+    return icons[category] || "🔥";
+}
+
+
+/* =========================================
+   FILTER NEWS
 ========================================= */
 
 function filterNews(category, button) {
@@ -68,8 +162,6 @@ function filterNews(category, button) {
         document.querySelectorAll(".filter");
 
 
-    /* Remove active */
-
     filters.forEach(function(filter) {
 
         filter.classList.remove("active");
@@ -77,12 +169,8 @@ function filterNews(category, button) {
     });
 
 
-    /* Add active */
-
     button.classList.add("active");
 
-
-    /* Filter cards */
 
     cards.forEach(function(card) {
 
@@ -109,7 +197,7 @@ function filterNews(category, button) {
 
 
 /* =========================================
-   PAGE LOADED
+   START TRENDORA
 ========================================= */
 
 document.addEventListener(
@@ -119,6 +207,8 @@ document.addEventListener(
         console.log(
             "🔥 Trendora loaded successfully!"
         );
+
+        loadNews();
 
     }
 );
