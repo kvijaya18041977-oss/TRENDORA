@@ -203,6 +203,7 @@ function filterNews(category, button) {
 document.addEventListener(
     "DOMContentLoaded",
     function() {
+       
 
         console.log(
             "🔥 Trendora loaded successfully!"
@@ -212,3 +213,68 @@ document.addEventListener(
 
     }
 );
+// TREND FILTERS
+
+const filters = document.querySelectorAll(".filter");
+const cards = document.querySelectorAll(".trend-card");
+
+filters.forEach(filter => {
+
+  filter.addEventListener("click", () => {
+
+    filters.forEach(btn => btn.classList.remove("active"));
+    filter.classList.add("active");
+
+    const category = filter.dataset.category;
+
+    cards.forEach(card => {
+
+      if (category === "all" ||
+          card.dataset.category === category) {
+
+        card.style.display = "block";
+
+      } else {
+
+        card.style.display = "none";
+
+      }
+
+    });
+
+  });
+
+});
+
+
+// STORY POPUP
+
+function openStory(title, category, text) {
+
+  document.getElementById("storyTitle").textContent = title;
+  document.getElementById("storyCategory").textContent = category;
+  document.getElementById("storyText").textContent = text;
+
+  document.getElementById("storyModal").style.display = "flex";
+
+  document.body.style.overflow = "hidden";
+}
+
+
+function closeStory() {
+
+  document.getElementById("storyModal").style.display = "none";
+
+  document.body.style.overflow = "auto";
+}
+
+
+// CLOSE WHEN CLICKING OUTSIDE
+
+document.getElementById("storyModal").addEventListener("click", function(e) {
+
+  if (e.target === this) {
+    closeStory();
+  }
+
+});
