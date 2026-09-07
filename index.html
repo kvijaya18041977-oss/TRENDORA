@@ -1,1363 +1,770 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-  <meta name="description"
-        content="Trendora - Discover what's trending in technology, entertainment, sports, music, gaming and India.">
+    <meta name="description"
+          content="Trendora - Discover everything trending in technology, entertainment, sports, gaming, music and India.">
 
-  <title>TRENDORA — What's Trending Now</title>
+    <meta name="theme-color"
+          content="#03040a">
 
-  <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>TRENDORA | Everything Trending</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
 
-  <!-- Your CSS -->
-  <link rel="stylesheet" href="style.css">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
-  <style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap"
+          rel="stylesheet">
 
-    /* ================================
-       TRENDORA BASE
-    ================================= */
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "Inter", sans-serif;
-      background: #f7f7f8;
-      color: #111;
-      line-height: 1.5;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    button {
-      font-family: inherit;
-    }
-
-    /* ================================
-       HEADER
-    ================================= */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-
-      background: rgba(255,255,255,.94);
-      backdrop-filter: blur(15px);
-
-      border-bottom: 1px solid #e8e8e8;
-    }
-
-    .nav-container {
-      max-width: 1250px;
-      margin: auto;
-
-      min-height: 72px;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      padding: 0 25px;
-    }
-
-    .logo {
-      font-size: 26px;
-      font-weight: 800;
-      letter-spacing: -1px;
-    }
-
-    .logo span {
-      color: #ff304f;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 25px;
-    }
-
-    nav a {
-      font-size: 14px;
-      font-weight: 600;
-      color: #444;
-
-      transition: .25s;
-    }
-
-    nav a:hover {
-      color: #ff304f;
-    }
-
-    .menu-button {
-      display: none;
-
-      border: none;
-      background: none;
-
-      font-size: 25px;
-      cursor: pointer;
-    }
-
-    /* ================================
-       HERO
-    ================================= */
-
-    .hero {
-      min-height: 620px;
-
-      display: flex;
-      align-items: center;
-
-      background:
-        radial-gradient(circle at 80% 20%,
-        rgba(255,48,79,.18),
-        transparent 35%),
-        linear-gradient(135deg,#ffffff,#f4f4f6);
-
-      padding: 80px 25px;
-    }
-
-    .hero-container {
-      max-width: 1250px;
-      width: 100%;
-      margin: auto;
-
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-
-      gap: 60px;
-      align-items: center;
-    }
-
-    .hero-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-
-      background: #111;
-      color: white;
-
-      padding: 9px 15px;
-      border-radius: 30px;
-
-      font-size: 13px;
-      font-weight: 700;
-
-      margin-bottom: 22px;
-    }
-
-    .pulse {
-      width: 8px;
-      height: 8px;
-
-      background: #ff304f;
-      border-radius: 50%;
-
-      animation: pulse 1.5s infinite;
-    }
-
-    @keyframes pulse {
-
-      0% {
-        transform: scale(1);
-        opacity: 1;
-      }
-
-      50% {
-        transform: scale(1.5);
-        opacity: .5;
-      }
-
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-
-    }
-
-    .hero h1 {
-      font-size: clamp(45px,7vw,82px);
-      line-height: .95;
-
-      letter-spacing: -4px;
-
-      margin-bottom: 25px;
-    }
-
-    .hero h1 span {
-      color: #ff304f;
-    }
-
-    .hero-text {
-      max-width: 600px;
-
-      font-size: 18px;
-      color: #666;
-
-      margin-bottom: 35px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .primary-btn,
-    .secondary-btn {
-
-      padding: 14px 23px;
-
-      border-radius: 30px;
-
-      font-weight: 700;
-
-      cursor: pointer;
-
-      transition: .3s;
-    }
-
-    .primary-btn {
-      border: none;
-
-      background: #111;
-      color: white;
-    }
-
-    .primary-btn:hover {
-      transform: translateY(-3px);
-      background: #ff304f;
-    }
-
-    .secondary-btn {
-      background: white;
-      border: 1px solid #ddd;
-    }
-
-    .secondary-btn:hover {
-      transform: translateY(-3px);
-      border-color: #111;
-    }
-
-    /* HERO TREND */
-
-    .hero-card {
-
-      border-radius: 30px;
-      overflow: hidden;
-
-      background: white;
-
-      box-shadow:
-        0 25px 70px rgba(0,0,0,.13);
-
-      transform: rotate(1deg);
-
-      transition: .4s;
-    }
-
-    .hero-card:hover {
-      transform: rotate(0deg) translateY(-8px);
-    }
-
-    .hero-card img {
-      width: 100%;
-      height: 350px;
-
-      object-fit: cover;
-    }
-
-    .hero-card-content {
-      padding: 25px;
-    }
-
-    .hero-card-content small {
-      color: #ff304f;
-      font-weight: 800;
-    }
-
-    .hero-card-content h2 {
-      font-size: 25px;
-      margin-top: 8px;
-    }
-
-    /* ================================
-       CATEGORIES
-    ================================= */
-
-    .categories {
-      padding: 30px 25px;
-      background: white;
-    }
-
-    .category-container {
-      max-width: 1100px;
-      margin: auto;
-
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-
-      gap: 12px;
-    }
-
-    .category-link {
-      padding: 12px 20px;
-
-      border-radius: 30px;
-
-      background: #f4f4f5;
-
-      font-size: 14px;
-      font-weight: 700;
-
-      transition: .3s;
-    }
-
-    .category-link:hover {
-      background: #111;
-      color: white;
-
-      transform: translateY(-3px);
-    }
-
-    /* ================================
-       TRENDING NOW
-    ================================= */
-
-    .trending-now {
-      max-width: 1250px;
-
-      margin: auto;
-
-      padding: 100px 25px;
-    }
-
-    .section-heading {
-      text-align: center;
-
-      margin-bottom: 35px;
-    }
-
-    .live-badge {
-      display: inline-block;
-
-      color: #ff304f;
-
-      font-size: 13px;
-      font-weight: 800;
-
-      margin-bottom: 8px;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(34px,5vw,52px);
-
-      letter-spacing: -2px;
-
-      margin-bottom: 8px;
-    }
-
-    .section-heading p {
-      color: #777;
-    }
-
-    /* FILTERS */
-
-    .trend-filters {
-
-      display: flex;
-
-      justify-content: center;
-
-      flex-wrap: wrap;
-
-      gap: 10px;
-
-      margin-bottom: 45px;
-    }
-
-    .filter {
-
-      border: 1px solid #ddd;
-
-      background: white;
-
-      padding: 11px 18px;
-
-      border-radius: 30px;
-
-      cursor: pointer;
-
-      font-size: 13px;
-      font-weight: 700;
-
-      transition: .3s;
-    }
-
-    .filter:hover,
-    .filter.active {
-
-      background: #111;
-
-      color: white;
-
-      border-color: #111;
-
-      transform: translateY(-2px);
-    }
-
-    /* TREND GRID */
-
-    .trend-grid {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(2,1fr);
-
-      gap: 28px;
-    }
-
-    /* TREND CARD */
-
-    .trend-card {
-
-      overflow: hidden;
-
-      background: white;
-
-      border: 1px solid #e7e7e7;
-
-      border-radius: 24px;
-
-      transition: .35s;
-
-      box-shadow:
-        0 8px 30px rgba(0,0,0,.04);
-    }
-
-    .trend-card:hover {
-
-      transform: translateY(-7px);
-
-      box-shadow:
-        0 25px 55px rgba(0,0,0,.12);
-    }
-
-    .trend-image {
-
-      height: 270px;
-
-      position: relative;
-
-      overflow: hidden;
-    }
-
-    .trend-image img {
-
-      width: 100%;
-      height: 100%;
-
-      object-fit: cover;
-
-      transition: .5s;
-    }
-
-    .trend-card:hover .trend-image img {
-      transform: scale(1.07);
-    }
-
-    .category-tag {
-
-      position: absolute;
-
-      top: 15px;
-      left: 15px;
-
-      padding: 8px 12px;
-
-      border-radius: 20px;
-
-      background: rgba(0,0,0,.78);
-
-      color: white;
-
-      font-size: 11px;
-
-      font-weight: 800;
-    }
-
-    .trend-content {
-
-      padding: 26px;
-    }
-
-    .trend-number {
-
-      font-size: 13px;
-
-      color: #999;
-
-      font-weight: 800;
-    }
-
-    .trend-content h3 {
-
-      font-size: 24px;
-
-      line-height: 1.2;
-
-      margin: 9px 0 12px;
-    }
-
-    .trend-content p {
-
-      color: #777;
-
-      font-size: 14px;
-
-      line-height: 1.7;
-    }
-
-    .trend-meta {
-
-      display: flex;
-
-      justify-content: space-between;
-
-      gap: 10px;
-
-      margin: 20px 0;
-
-      color: #888;
-
-      font-size: 12px;
-    }
-
-    .read-more {
-
-      border: none;
-
-      background: #111;
-
-      color: white;
-
-      padding: 12px 18px;
-
-      border-radius: 25px;
-
-      cursor: pointer;
-
-      font-weight: 700;
-
-      transition: .3s;
-    }
-
-    .read-more:hover {
-
-      background: #ff304f;
-
-      transform: translateX(5px);
-    }
-
-    /* ================================
-       FIND YOUR TREND
-    ================================= */
-
-    .find-trend {
-
-      background: #111;
-
-      color: white;
-
-      padding: 90px 25px;
-
-      text-align: center;
-    }
-
-    .find-trend-container {
-
-      max-width: 750px;
-
-      margin: auto;
-    }
-
-    .find-trend h2 {
-
-      font-size: 45px;
-
-      letter-spacing: -2px;
-
-      margin-bottom: 12px;
-    }
-
-    .find-trend p {
-
-      color: #aaa;
-
-      margin-bottom: 30px;
-    }
-
-    .search-box {
-
-      display: flex;
-
-      background: white;
-
-      border-radius: 40px;
-
-      padding: 6px;
-
-      max-width: 650px;
-
-      margin: auto;
-    }
-
-    .search-box input {
-
-      flex: 1;
-
-      border: none;
-
-      outline: none;
-
-      padding: 13px 18px;
-
-      font-size: 15px;
-
-      border-radius: 30px;
-    }
-
-    .search-box button {
-
-      border: none;
-
-      background: #ff304f;
-
-      color: white;
-
-      padding: 13px 23px;
-
-      border-radius: 30px;
-
-      font-weight: 700;
-
-      cursor: pointer;
-    }
-
-    /* ================================
-       ABOUT
-    ================================= */
-
-    .about {
-
-      padding: 90px 25px;
-
-      background: white;
-    }
-
-    .about-container {
-
-      max-width: 850px;
-
-      margin: auto;
-
-      text-align: center;
-    }
-
-    .about h2 {
-
-      font-size: 40px;
-
-      margin-bottom: 20px;
-    }
-
-    .about p {
-
-      color: #666;
-
-      line-height: 1.8;
-
-      font-size: 16px;
-    }
-
-    /* ================================
-       FOOTER
-    ================================= */
-
-    footer {
-
-      background: #0b0b0b;
-
-      color: white;
-
-      padding: 50px 25px;
-    }
-
-    .footer-container {
-
-      max-width: 1100px;
-
-      margin: auto;
-
-      display: flex;
-
-      justify-content: space-between;
-
-      gap: 30px;
-
-      flex-wrap: wrap;
-    }
-
-    .footer-logo {
-
-      font-size: 25px;
-
-      font-weight: 800;
-    }
-
-    .footer-logo span {
-      color: #ff304f;
-    }
-
-    .footer-text {
-
-      color: #888;
-
-      max-width: 350px;
-
-      margin-top: 10px;
-    }
-
-    .footer-links {
-
-      display: flex;
-
-      gap: 20px;
-
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-
-      color: #aaa;
-
-      font-size: 13px;
-    }
-
-    .footer-links a:hover {
-      color: white;
-    }
-
-    .copyright {
-
-      max-width: 1100px;
-
-      margin: 35px auto 0;
-
-      padding-top: 25px;
-
-      border-top: 1px solid #222;
-
-      color: #666;
-
-      font-size: 12px;
-    }
-
-    /* ================================
-       STORY MODAL
-    ================================= */
-
-    .story-modal {
-
-      display: none;
-
-      position: fixed;
-
-      inset: 0;
-
-      background: rgba(0,0,0,.75);
-
-      z-index: 9999;
-
-      align-items: center;
-
-      justify-content: center;
-
-      padding: 20px;
-    }
-
-    .story-box {
-
-      position: relative;
-
-      width: 100%;
-
-      max-width: 650px;
-
-      background: white;
-
-      color: #111;
-
-      padding: 40px;
-
-      border-radius: 25px;
-
-      animation: popup .3s ease;
-    }
-
-    @keyframes popup {
-
-      from {
-        opacity: 0;
-        transform: scale(.9);
-      }
-
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-
-    }
-
-    .story-box span {
-
-      color: #ff304f;
-
-      font-size: 12px;
-
-      font-weight: 800;
-    }
-
-    .story-box h2 {
-
-      font-size: 32px;
-
-      margin: 12px 0 18px;
-    }
-
-    .story-box p {
-
-      color: #666;
-
-      line-height: 1.8;
-    }
-
-    .close-story {
-
-      position: absolute;
-
-      right: 18px;
-      top: 12px;
-
-      border: none;
-
-      background: none;
-
-      font-size: 32px;
-
-      cursor: pointer;
-    }
-
-    .back-btn {
-
-      margin-top: 25px;
-
-      border: none;
-
-      background: #111;
-
-      color: white;
-
-      padding: 12px 20px;
-
-      border-radius: 25px;
-
-      cursor: pointer;
-
-      font-weight: 700;
-    }
-
-    /* ================================
-       SEARCH RESULT
-    ================================= */
-
-    #searchResult {
-
-      margin-top: 20px;
-
-      color: #aaa;
-
-      font-size: 14px;
-    }
-
-    /* ================================
-       MOBILE
-    ================================= */
-
-    @media (max-width: 800px) {
-
-      nav {
-        display: none;
-      }
-
-      .menu-button {
-        display: block;
-      }
-
-      .hero-container {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding: 65px 20px;
-      }
-
-      .hero h1 {
-        letter-spacing: -2px;
-      }
-
-      .trend-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .trending-now {
-        padding: 70px 20px;
-      }
-
-      .trend-image {
-        height: 230px;
-      }
-
-      .find-trend h2 {
-        font-size: 35px;
-      }
-
-    }
-
-    @media (max-width: 500px) {
-
-      .hero-buttons {
-        flex-direction: column;
-      }
-
-      .primary-btn,
-      .secondary-btn {
-        text-align: center;
-      }
-
-      .search-box {
-        flex-direction: column;
-
-        background: transparent;
-
-        gap: 8px;
-      }
-
-      .search-box input {
-        background: white;
-      }
-
-      .search-box button {
-        width: 100%;
-      }
-
-      .trend-meta {
-        flex-direction: column;
-      }
-
-      .story-box {
-        padding: 30px 22px;
-      }
-
-    }
-
-  </style>
-
+    <!-- Main CSS -->
+    <link rel="stylesheet"
+          href="style.css">
 </head>
 
 
 <body>
 
+    <!-- ==================================================
+         HEADER
+    =================================================== -->
 
-<!-- =================================
-     HEADER
-================================= -->
+    <header class="header">
 
-<header>
+        <div class="nav-container">
 
-  <div class="nav-container">
+            <a href="#home"
+               class="logo">
+                TREN<span>DORA</span>
+            </a>
 
-    <a href="#" class="logo">
-      TREN<span>DORA</span>
-    </a>
+            <button class="menu-btn"
+                    onclick="toggleMenu()"
+                    aria-label="Open menu">
+                ☰
+            </button>
 
-    <nav>
+            <nav>
 
-      <a href="#trending">Trending</a>
+                <a href="#home">
+                    Home
+                </a>
 
-      <a href="#categories">Categories</a>
+                <a href="#trending">
+                    Trending
+                </a>
 
-      <a href="#find">Search</a>
+                <a href="#categories">
+                    Categories
+                </a>
 
-      <a href="#about">About</a>
+                <a href="#discover">
+                    Discover
+                </a>
 
-    </nav>
+                <a href="#about">
+                    About
+                </a>
 
-    <button class="menu-button"
-            onclick="toggleMenu()">
-      ☰
-    </button>
+            </nav>
 
-  </div>
+        </div>
 
-</header>
+    </header>
 
 
-<!-- =================================
-     HERO
-================================= -->
+    <!-- ==================================================
+         LIVE BAR
+    =================================================== -->
 
-<section class="hero">
+    <div class="live-bar">
 
-  <div class="hero-container">
+        <div class="live-content">
 
-    <div>
+            <span class="live-dot"></span>
 
-      <div class="hero-label">
+            <strong>
+                LIVE TRENDING
+            </strong>
 
-        <span class="pulse"></span>
+            <span>
+                Updated in real time
+            </span>
 
-        LIVE TRENDING
+            <span class="live-clock"
+                  id="liveTime">
+                --:--:--
+            </span>
 
-      </div>
-
-      <h1>
-        What's<br>
-        <span>Trending?</span>
-      </h1>
-
-      <p class="hero-text">
-
-        Discover the stories, topics and conversations
-        everyone is talking about — all in one place.
-
-      </p>
-
-      <div class="hero-buttons">
-
-        <a href="#trending"
-           class="primary-btn">
-
-          Explore Trends →
-
-        </a>
-
-        <a href="#categories"
-           class="secondary-btn">
-
-          Browse Categories
-
-        </a>
-
-      </div>
+        </div>
 
     </div>
 
 
-    <!-- HERO FEATURE -->
+    <!-- ==================================================
+         HERO
+    =================================================== -->
 
-    <div class="hero-card">
+    <main>
 
-      <img
-        src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=80"
-        alt="Technology and digital trends">
+        <section id="home"
+                 class="hero">
 
-      <div class="hero-card-content">
+            <div class="hero-content">
 
-        <small>🔥 FEATURED TREND</small>
+                <div class="hero-badge">
+                    ⚡ THE INTERNET'S HOTTEST TOPICS
+                </div>
 
-        <h2>
-          Technology is changing faster than ever.
-        </h2>
+                <h1>
+                    EVERYTHING
+                    <span>TRENDING.</span>
+                </h1>
 
-      </div>
+                <p>
+                    Discover the hottest stories,
+                    entertainment, technology,
+                    gaming, sports and viral topics
+                    all in one place.
+                </p>
 
-    </div>
+                <div class="hero-buttons">
 
-  </div>
+                    <a href="#trending"
+                       class="btn primary-btn">
+                        🔥 Explore Trends
+                    </a>
 
-</section>
+                    <a href="#categories"
+                       class="btn secondary-btn">
+                        Explore Categories
+                    </a>
 
+                </div>
 
-<!-- =================================
-     CATEGORIES
-================================= -->
+            </div>
 
-<section class="categories"
-         id="categories">
+            <div class="hero-decoration">
 
-  <div class="category-container">
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+                <div class="orbit orbit-three"></div>
 
-    <a href="#trending"
-       class="category-link">
-      🔴 Live Trending
-    </a>
+            </div>
 
-    <a href="#trending"
-       class="category-link">
-      🎵 Music
-    </a>
+        </section>
 
-    <a href="#trending"
-       class="category-link">
-      🎬 Entertainment
-    </a>
 
-    <a href="#trending"
-       class="category-link">
-      🎮 Gaming
-    </a>
+        <!-- ==================================================
+             TRENDING STATS
+        =================================================== -->
 
-    <a href="#trending"
-       class="category-link">
-      ⚽ Sports
-    </a>
+        <section class="stats-section">
 
-    <a href="#trending"
-       class="category-link">
-      🇮🇳 India
-    </a>
+            <div class="stats-container">
 
-    <a href="#trending"
-       class="category-link">
-      🤖 Technology
-    </a>
+                <div class="stat-box">
 
-  </div>
+                    <div class="stat-icon">
+                        🔥
+                    </div>
 
-</section>
+                    <div>
+                        <strong id="trendCounter">
+                            0
+                        </strong>
 
+                        <span>
+                            Trending Topics
+                        </span>
+                    </div>
 
-<!-- =================================
-     TRENDING NOW
-================================= -->
+                </div>
 
-<section class="trending-now"
-         id="trending">
 
+                <div class="stat-box">
 
-  <div class="section-heading">
+                    <div class="stat-icon">
+                        🌎
+                    </div>
 
-    <span class="live-badge">
-      🔴 LIVE TRENDING
-    </span>
+                    <div>
+                        <strong>
+                            24/7
+                        </strong>
 
-    <h2>
-      Trending Now
-    </h2>
+                        <span>
+                            Trend Discovery
+                        </span>
+                    </div>
 
-    <p>
-      Fresh topics and stories people are talking about.
-    </p>
+                </div>
 
-  </div>
 
+                <div class="stat-box">
 
-  <!-- FILTER BUTTONS -->
+                    <div class="stat-icon">
+                        ⚡
+                    </div>
 
-  <div class="trend-filters">
+                    <div>
+                        <strong>
+                            LIVE
+                        </strong>
 
-    <button class="filter active"
-            data-category="all">
+                        <span>
+                            Fresh Updates
+                        </span>
+                    </div>
 
-      All
+                </div>
 
-    </button>
+            </div>
 
-    <button class="filter"
-            data-category="technology">
+        </section>
 
-      🤖 Technology
 
-    </button>
+        <!-- ==================================================
+             CATEGORIES
+        =================================================== -->
 
-    <button class="filter"
-            data-category="entertainment">
+        <section id="categories"
+                 class="categories-section">
 
-      🎬 Entertainment
+            <div class="section-heading">
 
-    </button>
+                <div>
 
-    <button class="filter"
-            data-category="sports">
+                    <span class="section-label">
+                        EXPLORE
+                    </span>
 
-      ⚽ Sports
+                    <h2>
+                        TRENDING CATEGORIES
+                    </h2>
 
-    </button>
+                </div>
 
-    <button class="filter"
-            data-category="india">
+                <p>
+                    Find what the world is talking about.
+                </p>
 
-      🇮🇳 India
+            </div>
 
-    </button>
 
-  </div>
+            <div class="category-grid">
 
 
-  <!-- TREND CARDS -->
+                <!-- MUSIC -->
 
-  <div class="trend-grid">
+                <a href="#trending"
+                   class="category-card"
+                   data-category-link="music">
 
+                    <div class="category-icon">
+                        🎵
+                    </div>
 
-    <!-- CARD 1 -->
+                    <div>
 
-    <article class="trend-card"
-             data-category="technology">
+                        <h3>
+                            Music
+                        </h3>
 
-      <div class="trend-image">
+                        <p>
+                            Songs, artists and viral music.
+                        </p>
 
-        <img
-          src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1000&q=80"
-          alt="Artificial intelligence">
+                    </div>
 
-        <span class="category-tag">
-          🤖 TECHNOLOGY
-        </span>
+                    <span class="category-arrow">
+                        →
+                    </span>
 
-      </div>
+                </a>
 
 
-      <div class="trend-content">
+                <!-- ENTERTAINMENT -->
 
-        <span class="trend-number">
-          #01
-        </span>
+                <a href="#trending"
+                   class="category-card"
+                   data-category-link="entertainment">
 
-        <h3>
-          Artificial intelligence is changing the digital world
-        </h3>
+                    <div class="category-icon">
+                        🎬
+                    </div>
 
-        <p>
-          Discover how AI and emerging technologies
-          are becoming major topics of conversation.
-        </p>
+                    <div>
 
-        <div class="trend-meta">
+                        <h3>
+                            Entertainment
+                        </h3>
 
-          <span>
-            Technology
-          </span>
+                        <p>
+                            Movies, shows and celebrities.
+                        </p>
 
-          <span>
-            🕒 2h ago
-          </span>
+                    </div>
 
-        </div>
+                    <span class="category-arrow">
+                        →
+                    </span>
 
-        <button
-          class="read-more"
-          onclick="openStory(
-          'Artificial Intelligence',
-          'TECHNOLOGY',
-          'Artificial intelligence is becoming an important part of modern technology. Explore the latest developments, ideas and conversations surrounding AI.'
-          )">
+                </a>
 
-          Read More →
 
-        </button>
+                <!-- GAMING -->
 
-      </div>
+                <a href="#trending"
+                   class="category-card"
+                   data-category-link="gaming">
 
-    </article>
+                    <div class="category-icon">
+                        🎮
+                    </div>
 
+                    <div>
 
-    <!-- CARD 2 -->
+                        <h3>
+                            Gaming
+                        </h3>
 
-    <article class="trend-card"
-             data-category="entertainment">
+                        <p>
+                            Games, updates and gaming news.
+                        </p>
 
-      <div class="trend-image">
+                    </div>
 
-        <img
-          src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1000&q=80"
-          alt="Cinema and entertainment">
+                    <span class="category-arrow">
+                        →
+                    </span>
 
-        <span class="category-tag">
-          🎬 ENTERTAINMENT
-        </span>
+                </a>
 
-      </div>
 
+                <!-- SPORTS -->
 
-      <div class="trend-content">
+                <a href="#trending"
+                   class="category-card"
+                   data-category-link="sports">
 
-        <span class="trend-number">
-          #02
-        </span>
+                    <div class="category-icon">
+                        🏆
+                    </div>
 
-        <h3>
-          Movies and streaming shows are creating buzz
-        </h3>
+                    <div>
 
-        <p>
-          Explore popular entertainment topics,
-          movies and shows attracting attention.
-        </p>
+                        <h3>
+                            Sports
+                        </h3>
 
-        <div class="trend-meta">
+                        <p>
+                            Matches, players and sports news.
+                        </p>
 
-          <span>
-            Entertainment
-          </span>
+                    </div>
 
-          <span>
-            🕒 3h ago
-          </span>
+                    <span class="category-arrow">
+                        →
+                    </span>
 
-        </div>
+                </a>
 
-        <button
-          class="read-more"
-          onclick="openStory(
-          'Entertainment Trends',
-          'ENTERTAINMENT',
-          'Movies, series and streaming platforms continue to create conversations. Trendora brings popular entertainment topics together in one place.'
-          )">
 
-          Read More →
+                <!-- TECHNOLOGY -->
 
-        </button>
+                <a href="#trending"
+                   class="category-card"
+                   data-category-link="technology">
 
-      </div>
+                    <div class="category-icon">
+                        🤖
+                    </div>
 
-    </article>
+                    <div>
 
+                        <h3>
+                            Technology
+                        </h3>
 
-    <!-- CARD 3 -->
+                        <p>
+                            AI, gadgets and innovation.
+                        </p>
 
-    <article class="trend-card"
-             d
+                    </div>
+
+                    <span class="category-arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- INDIA -->
+
+                <a href="#trending"
+                   class="category-card"
+                   data-category-link="india">
+
+                    <div class="category-icon">
+                        🇮🇳
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            India
+                        </h3>
+
+                        <p>
+                            What's trending across India.
+                        </p>
+
+                    </div>
+
+                    <span class="category-arrow">
+                        →
+                    </span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             TRENDING NOW
+        =================================================== -->
+
+        <section id="trending"
+                 class="trending-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        🔴 LIVE FEED
+                    </span>
+
+                    <h2>
+                        TRENDING NOW
+                    </h2>
+
+                </div>
+
+                <p>
+                    Fresh stories and topics from around the web.
+                </p>
+
+            </div>
+
+
+            <!-- FILTERS -->
+
+            <div class="filters">
+
+                <button class="filter active"
+                        data-filter="all">
+                    All
+                </button>
+
+                <button class="filter"
+                        data-filter="technology">
+                    Technology
+                </button>
+
+                <button class="filter"
+                        data-filter="entertainment">
+                    Entertainment
+                </button>
+
+                <button class="filter"
+                        data-filter="sports">
+                    Sports
+                </button>
+
+                <button class="filter"
+                        data-filter="india">
+                    India
+                </button>
+
+                <button class="filter"
+                        data-filter="gaming">
+                    Gaming
+                </button>
+
+                <button class="filter"
+                        data-filter="music">
+                    Music
+                </button>
+
+            </div>
+
+
+            <!-- TREND CARDS -->
+
+            <div class="trend-grid">
+
+
+                <!-- CARD 1 -->
+
+                <article class="trend-card"
+                         data-category="technology">
+
+                    <div class="trend-image">
+
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80"
+                             alt="Artificial intelligence technology">
+
+                        <span class="trend-number">
+                            #01
+                        </span>
+
+                    </div>
+
+                    <div class="trend-content">
+
+                        <span class="trend-tag">
+                            TECHNOLOGY
+                        </span>
+
+                        <span class="trend-time">
+                            ⚡ Trending
+                        </span>
+
+                        <h3>
+                            Artificial Intelligence
+                            Is Changing Everything
+                        </h3>
+
+                        <p>
+                            Explore the latest developments
+                            in artificial intelligence,
+                            automation and the future of technology.
+                        </p>
+
+                        <button class="read-more"
+                                onclick="openStory(
+                                'Artificial Intelligence Is Changing Everything',
+                                'Technology',
+                                'Artificial intelligence is becoming one of the most discussed technologies in the world. Explore the latest developments, applications and innovations.'
+                                )">
+
+                            Read More
+                            →
+                            
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 2 -->
+
+                <article class="trend-card"
+                         data-category="entertainment">
+
+                    <div class="trend-image">
+
+                        <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=900&q=80"
+                             alt="Cinema entertainment">
+
+                        <span class="trend-number">
+                            #02
+                        </span>
+
+                    </div>
+
+                    <div class="trend-content">
+
+                        <span class="trend-tag">
+                            ENTERTAINMENT
+                        </span>
+
+                        <span class="trend-time">
+                            🔥 Hot
+                        </span>
+
+                        <h3>
+                            Movies Everyone
+                            Is Talking About
+                        </h3>
+
+                        <p>
+                            Discover popular movies,
+                            entertainment stories and
+                            the latest screen trends.
+                        </p>
+
+                        <button class="read-more"
+                                onclick="openStory(
+                                'Movies Everyone Is Talking About',
+                                'Entertainment',
+                                'The entertainment world is constantly changing. Discover popular movies, shows and stories attracting attention around the world.'
+                                )">
+
+                            Read More
+                            →
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 3 -->
+
+                <article class="trend-card"
+                         data-category="sports">
+
+                    <div class="trend-image">
+
+                        <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=900&q=80"
+                             alt="Sports stadium">
+
+                        <span class="trend-number">
+                            #03
+                        </span>
+
+                    </div>
+
+                    <div class="trend-content">
+
+                        <span class="trend-tag">
+                            SPORTS
+                        </span>
+
+                        <span class="trend-time">
+                            🏆 Live
+                        </span>
+
+                        <h3>
+                            Sports Moments
+                            Taking Over the Internet
+                        </h3>
+
+                        <p>
+                            Follow exciting sports moments,
+                            competitions, players and
+                            stories making headlines.
+                        </p>
+
+                        <button class="read-more"
+                                onclick="openStory(
+                                'Sports Moments Taking Over the Internet',
+                                'Sports',
+                                'From major competitions to unforgettable performances, sports continues to create moments that capture global attention.'
+                                )">
+
+                            Read More
+                            →
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 4 -->
+
+                <article class="trend-card"
+                         data-category="india">
+
+                    <div class="trend-image">
+
+                        <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=900&q=80"
+                             alt="India landmark">
+
+                        <span class="trend-number">
+                            #04
+                        </span>
+
+                    </div>
+
+                    <div class="trend-content">
+
+                        <span class="trend-tag">
+                            INDIA
+                        </span>
+
+                        <span class="trend-time">
+                            🇮🇳 Trending
+                        </span>
+
+                        <h3>
+                            What's Trending
+                            Across India
+                        </h3>
+
+                        <p>
+                            Discover topics, stories and
+                            conversations getting attention
+                            across India.
+                        </p>
+
+                        <button class="read-more"
+                                onclick="openStory(
+                                'What Is Trending Across India',
+                                'India',
+                                'Discover interesting topics, conversations and stories that are attracting attention across different parts of India.'
+                                )">
+
+                            Read More
+                            →
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 5 -->
+
+                <article class="trend-card"
+                         data-category="technology">
+
+                    <div class="trend-image">
+
+                        <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=900&q=80"
+                             alt="Modern technology">
+
+                        <span class="trend-number">
+                            #05
+                        </span>
+
+                    </div>
+
+                    <div class="trend-content">
+
+                        <span class="trend-tag">
+                            TECHNOLOGY
+                        </span>
+
+                        <span class="trend-time">
+                            ⚡ New
+                        </span>
+
+                        <h3>
+                            The Next Generation
+                            of Technology
+                        </h3>
+
+                        <p>
+                            From smart devices to robotics,
+                            technology is rapidly changing
+           
